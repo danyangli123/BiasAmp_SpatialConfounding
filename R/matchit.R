@@ -108,8 +108,8 @@ Matchit_list <- function(df, caliper, clp, rep = TRUE, est="ATE", match_method) 
     df1[crl_id,]$X_indv = 1
     dist_ct <- optmatch::match_on(X_indv~p0+p1,method = "euclidean", data=df1)
   }
-  if(caliper == "None"){clp <- NULL}
-  stdclp <- ifelse(caliper == "None", TRUE, FALSE)
+  if(caliper == 0|is.na(caliper)){clp <- NULL}
+  stdclp <- ifelse(caliper == 0|is.na(caliper), TRUE, FALSE)
   #ATT & ATC
   if(match_method == "full"){
     m.out_ATT <- matchit(X_indv~p0+p1, data = df, method = match_method,
