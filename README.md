@@ -18,7 +18,10 @@ This repository studies **bias amplification** in spatial regression
 under **unmeasured spatial confounding**. We simulate spatial data under
 multiple scenarios and compare estimation strategies in terms of bias,
 uncertainty quantification (e.g., coverage), and overall error. More
-details can be find in paper \<\>.
+details can be find in the paper Li D, Cruz M, Mooney SJ, Cook AJ, Bobb
+JF (2025). **Mitigating the risk of bias exacerbation when controlling
+for unmeasured spatial confounding for binary exposures.** *American
+Journal of Epidemiology*, kwaf248.
 
 ------------------------------------------------------------------------
 
@@ -27,9 +30,8 @@ details can be find in paper \<\>.
 - `R/` contains helper functions:
   - data generation for spatial scenarios
   - spatial mapping function for generated exposure-confounding surface
-  - …
-  - performance summarization (bias, SE, coverage, MSE, etc.)
-  - plotting for spatial scenarios and simulation results
+  - preprocess function for matching methods
+  - performance summary (bias, variance estimator, coverage, rMSE, etc.)
 - This README embeds **major pipeline code** (high-level calls), while
   helper implementations remain in `R/`.
 
